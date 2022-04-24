@@ -1,0 +1,6 @@
+
+Make adjust button work
+
+Make better way to find right gain to match loudness
+
+Allow for key presses from logic while plug is selected.

@@ -1,6 +1,10 @@
-
-Make adjust button work
+Split up Function into helper functions.
 
 Make better way to find right gain to match loudness
 
 Allow for key presses from logic while plug is selected.
+
+Make test cases.
+
+
+git rm --cached path/to/unwanted/.DS_State

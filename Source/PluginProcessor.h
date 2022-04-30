@@ -83,14 +83,19 @@ public:
 
     void setFreezeLoudnessRangeOnSilence (bool freeze);
     
-    void reset1();
+    void resetStates();
+    void detectSilence(juce::AudioBuffer<float>& buffer);
+    void applyFilters(juce::AudioBuffer<float>& bufferForMeasurement);
+    void squareChannelData(juce::AudioBuffer<float>& bufferForMeasurement);
+    int getNumChannels(juce::AudioBuffer<float>& bufferForMeasurement);
+    void addToBins(juce::AudioBuffer<float>& bufferForMeasurement, int numberOfChannels);
+    void calculateShortTermLoudness(int k, int numberOfChannels);
+    void calculateMomentaryLoudness(int k, int numberOfChannels);
+    void calculateIntegratedLoudness(int numberOfChannels);
     
-    float decibels;
-    float lufsTarget;
     float integratedLoudnessDiff;
     juce::AudioProcessorValueTreeState treeState;
     juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
-//    juce::AudioPlayHead::CurrentPositionInfo playheadInfo;
     bool wasPlaying;
     void calculateLufs(juce::AudioBuffer<float>& buffer);
 
